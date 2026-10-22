@@ -3,18 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fdf6e3">
 <title>LINGOVERSE</title>
 <style>
-  body{margin:0;font-family:sans-serif;background:#fdf6e3;color:#3b2f2f;
-       display:flex;flex-direction:column;align-items:center;
-       justify-content:center;min-height:100vh;text-align:center;padding:20px}
-  h1{font-size:2.2rem;margin:0 0 8px}
-  p{font-size:1.1rem}
+:root{--bg:#fdf6e3;--card:#fffaf0;--ink:#3b2f2f;--sub:#7a6a5a;--main:#d9722b;--main2:#b85a1a;--ok:#2e8b57;--bad:#c0392b;--line:#eadfc8}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,sans-serif;line-height:1.6}
+#app{max-width:480px;margin:0 auto;padding:16px 16px 40px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.badge{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:6px 14px;font-weight:700}
+.bar{height:10px;background:var(--line);border-radius:6px;overflow:hidden;margin:6px 0 4px}
+.bar i{display:block;height:100%;background:var(--main);transition:width .5s}
+.small{font-size:.85rem;color:var(--sub)}
+.hero{background:linear-gradient(160deg,#ffe9c7,#f7c98b);border-radius:24px;padding:28px 16px;text-align:center;margin:16px 0}
+.hero .big{font-size:4.5rem;line-height:1.1}
+.hero h1{margin:8px 0 2px;font-size:1.6rem}
+.btn{display:block;width:100%;min-height:52px;border:0;border-radius:16px;background:var(--main);color:#fff;font-size:1.15rem;font-weight:700;padding:12px;margin:10px 0;cursor:pointer}
+.btn:active{background:var(--main2)}
+.btn.ghost{background:var(--card);color:var(--ink);border:1px solid var(--line);font-weight:600}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;margin:12px 0}
+.en{direction:ltr;text-align:left;font-size:1.25rem;font-weight:600}
+.ar{color:var(--sub);margin-top:6px}
+.scene{background:linear-gradient(160deg,#cfe8f7,#f7e6c4);border-radius:20px;text-align:center;font-size:4rem;padding:22px 0}
+.dots{display:flex;gap:6px;justify-content:center;margin:8px 0}
+.dot{width:12px;height:12px;border-radius:50%;background:var(--line)}
+.dot.on{background:var(--ok)}.dot.cur{outline:2px solid var(--main);outline-offset:2px}
+.v{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px dashed var(--line)}
+.v:last-child{border:0}
+.v b{direction:ltr}
+.icon{border:0;background:transparent;font-size:1.4rem;min-width:44px;min-height:44px;cursor:pointer}
+.opt{display:block;width:100%;min-height:50px;text-align:left;direction:ltr;background:#fff;border:2px solid var(--line);border-radius:14px;padding:10px 14px;margin:8px 0;font-size:1.05rem;cursor:pointer}
+.opt.wrong{border-color:var(--bad);background:#fdecea;opacity:.7}
+.opt.right{border-color:var(--ok);background:#e6f6ec}
+.words{display:flex;flex-wrap:wrap;gap:8px;direction:ltr;min-height:50px;margin:8px 0}
+.w{border:2px solid var(--line);background:#fff;border-radius:12px;padding:10px 14px;font-size:1.05rem;cursor:pointer;min-height:44px}
+.slot{background:#fff;border:2px dashed var(--line);border-radius:14px;padding:8px}
+.fb{padding:12px;border-radius:14px;margin:10px 0;font-weight:600}
+.fb.ok{background:#e6f6ec;color:var(--ok)}.fb.no{background:#fdecea;color:var(--bad)}
+.pop{animation:pop .4s}
+@keyframes pop{0%{transform:scale(.9)}60%{transform:scale(1.04)}100%{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.pop{animation:none}.bar i{transition:none}}
 </style>
 </head>
 <body>
-  <h1>LINGOVERSE</h1>
-  <p>Learn English. Live the Story.</p>
-  <p>اشتغل الموقع بنجاح ✅</p>
+<div id="app">جارٍ التحميل...</div>
+<script src="app.js"></script>
 </body>
 </html>
