@@ -223,4 +223,15 @@ function correct(){
  answered=true;let before=levelOf(S.xp),msg='أحسنت! إجابة صحيحة ✅';
  if(!S.done.includes(S.cur)){S.done.push(S.cur);S.xp+=SCENE_XP;msg+=' (+'+SCENE_XP+' XP)'}
  else msg+=' (أنجزت هذا المشهد سابقاً، بدون XP إضافي)';
- if(levelOf(S.xp)>before)msg+=' 🎉 ارت
+if(levelOf(S.xp)>before)msg+=' 🎉 ارتقيت إلى المستوى '+levelOf(S.xp)+'!';
+fb=msg;fbOk=true;save();
+if(levelOf(S.xp)>before)sfx.up();else sfx.ok();
+if(typeof burst==='function')burst();
+render();
+}
+function next(){
+if(S.cur<STORY.scenes.length-1){S.cur++;resetScene();save();render(true);return}
+if(!S.finished){S.finished=true;S.xp+=(typeof STORY_XP!=='undefined'?STORY_XP:20)}
+S.cur=0;view='home';save();if(sfx.win)sfx.win();render(true);
+}
+render(true);
