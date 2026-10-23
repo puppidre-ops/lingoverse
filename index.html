@@ -52,5 +52,6 @@ function showErr(t){document.body.insertAdjacentHTML('afterbegin','<pre dir="ltr
 window.addEventListener('error',function(e){showErr('ERROR: '+e.message+' @ '+(e.filename||'')+':'+e.lineno+':'+e.colno)});
 </script>
 <script src="app3.js?v=8" onerror="showErr('app3.js لم يُحمَّل')"></script>
+  <script src="extra.js?v=1" onerror="showErr('extra.js لم يُحمَّل')"></script>
 </body>
 </html>
