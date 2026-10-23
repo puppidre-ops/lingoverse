@@ -50,7 +50,6 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,sans-s
 <script>
 function showErr(t){document.body.insertAdjacentHTML('afterbegin','<pre dir="ltr" style="white-space:pre-wrap;background:#fee;color:#900;padding:10px;font-size:13px">'+t+'</pre>')}
 window.addEventListener('error',function(e){showErr('ERROR: '+e.message+' @ '+(e.filename||'')+':'+e.lineno+':'+e.colno)});
-</script>
-<script src="app.js?v=5" onerror="showErr('app.js لم يُحمَّل')"></script>
+</script><script src="app2.js?v=6" onerror="showErr('app2.js لم يُحمَّل')"></script>
 </body>
 </html>
